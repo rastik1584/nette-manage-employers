@@ -1,0 +1,37 @@
+body {
+  background: #fefefe;
+}
+body .container {
+  position: relative;
+}
+body .container .flash.info {
+  background: green;
+  color: white;
+  padding: 5px 10px;
+}
+body .container .employers-content {
+  margin-top: 50px;
+}
+body .container .employers-content .employers-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .container .employers-default h1 {
+  margin: 50px 0;
+  text-align: center;
+}
+body .container .employers-default form table {
+  width: 100%;
+}
+body .container .employers-default form table tr th {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 7px;
+  padding-right: 15px;
+}
+body .container .employers-default form .button {
+  margin-top: 7px;
+}
+
+/*# sourceMappingURL=main.css.map */

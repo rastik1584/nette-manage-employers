@@ -1,0 +1,34 @@
+{block content}
+<div class="employers-content">
+    <div class="employers-head">
+        <h1>Zoznam zamestnancov</h1>
+        <div class="add-button">
+            <a n:href="Employers:create" class="btn btn-sm btn-primary">Pridať</a>
+        </div>
+    </div>
+    <table class="table table-hover table-responsive employers-list">
+        <thead>
+        <tr>
+            <th scope="col" n:foreach="$structure as $field">{$field['label']}</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {if isset($content_data['@attributes'])}
+            <tr>
+                {foreach $content_data as $data}
+                    {include 'partials/row.latte', data: $data, content_row: $content_data, iterator: $iterator}
+                {/foreach}
+            </tr>
+        {else}
+            <tr n:foreach="$content_data as $row">
+                {foreach $row as $data}
+                    {include 'partials/row.latte', data: $data, content_row: $row, iterator: $iterator}
+                {/foreach}
+                {else}
+                <td colspan="{php echo (count($structure) +1)}">Zoznam zamestnancov je prázdny</td>
+            </tr>
+        {/if}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,50 @@
+body {
+  background: #fefefe;
+  .container {
+    position: relative;
+    .flash {
+      &.info {
+        background: green;
+        color: white;
+        padding: 5px 10px;
+
+      }
+    }
+    .employers-content {
+      margin-top: 50px;
+      .employers-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .employers-list {
+        .edit-button {
+
+        }
+      }
+    }
+    .employers-default {
+      h1 {
+        margin: 50px 0;
+        text-align: center;
+      }
+      form {
+
+        table {
+          width: 100%;
+          tr {
+            th {
+              display: flex;
+              justify-content: flex-end;
+              padding-top: 7px;
+              padding-right: 15px;
+            }
+          }
+        }
+        .button {
+          margin-top: 7px;
+        }
+      }
+    }
+  }
+}

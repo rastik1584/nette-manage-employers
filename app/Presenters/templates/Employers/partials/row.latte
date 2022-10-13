@@ -1,0 +1,9 @@
+{if !$iterator->first}
+    <td>{$data}</td>
+{/if}
+{if $iterator->last}
+    <td class="actions">
+        <a n:href="Employers:edit $content_row['@attributes']['id']" class="btn btn-sm btn-primary edit-button">Editovať</a>
+        <a href="/employers/delete/{$content_row['@attributes']['id']}" class="btn btn-sm btn-danger remove-button">Zmazať</a>
+    </td>
+{/if}
