@@ -17,10 +17,26 @@ final class EmployerFacade
     }
 
     /**
+     * return list of all employers age for show graph
+     * @return string
+     */
+    public static function getAllAgesList()
+    {
+        $age_list = [];
+        $labels = [];
+        $xml = simplexml_load_file(XML_DB_FILE);
+        foreach($xml->Employers->Employer as $employer) {
+            $age_list[] = (string)$employer->age;
+            $labels[] = (string)$employer->name;
+        }
+        return ['labels' => $labels, 'data' => $age_list];
+    }
+
+    /**
      * Structure from employers
      * @return array[]
      */
-    public static function structure()
+    public static function structure(): array
     {
         return [
             'name' => [

@@ -32,3 +32,55 @@
         </tbody>
     </table>
 </div>
+<div class="employer-graph">
+    <h2>Grafy veku zamestnancov</h2>
+    <canvas id="myLineChart"></canvas>
+    <canvas id="myBarChart"></canvas>
+</div>
+{/block}
+
+{block scripts}
+    {include #parent}
+    <script>
+        var ctx = document.getElementById('myLineChart').getContext('2d');
+        var bar = document.getElementById('myBarChart');
+
+        var myLineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {$age_list['labels']},
+                datasets: [{
+                    label: '# vek zamestnanca',
+                    data: {$age_list['data']},
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        max: 100,
+                        min: 0
+                    }
+                }
+            }
+        });
+
+        var myBarChart = new Chart(bar, {
+            type: 'bar',
+            data: {
+                labels: {$age_list['labels']},
+                datasets: [{
+                    label: '# vek zamestnanca',
+                    data: {$age_list['data']},
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        min: 0
+                    }
+                }
+            }
+        });
+    </script>
+{/block}
+

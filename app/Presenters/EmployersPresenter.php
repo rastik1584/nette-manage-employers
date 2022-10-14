@@ -27,6 +27,7 @@ final class EmployersPresenter extends Nette\Application\UI\Presenter
         $xml = $this->getXmlFile();
         $content_data = json_decode(json_encode($xml->Employers), true );
 
+        $this->template->age_list = EmployerFacade::getAllAgesList();
         $this->template->content_data = isset($content_data['Employer']) ? $content_data['Employer'] : $content_data;
         $this->template->structure = EmployerFacade::structure();
     }
